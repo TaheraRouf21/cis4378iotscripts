@@ -1,4 +1,6 @@
 --- IoT Honeypot Simulation Project ---
+
+
 Overview:
   This project simulated IoT enviornment with a deployed honeypot designed to detect, log, and analyze malicious activity. The goal is to better understand how attackers target vulnerable IoT devices and to demonstrate basic defensive security monitoring techniques. 
   This project was built as part of a cybersecurity learning experience focused on network security, threat detection, and system monitoring.
