@@ -9,6 +9,7 @@ import cupSecure
 from datetime import datetime, timedelta
 from dateutil import parser
 import usSessionWrite
+import hashlib
 
 app = Flask(__name__)
 
@@ -47,7 +48,8 @@ def getLogin():
     return gethtml("login.html")
 
 def postLogin():
-    userIP = request.remote_id
+    userIP = request.remote_addr
+    userIP = hashlib.sha256(userIP.encode()).hexdigest()
     if(usSessionWrite.checkAttemptCount(userIP)):
         password = request.form["password"]
         uname = request.form["username"]
