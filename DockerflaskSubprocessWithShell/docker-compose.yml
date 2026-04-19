@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  mosquitto:
+    image: pyslimiot2
+    container_name: test
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ./cert
+        target: /home/certs
+        read_only: false
