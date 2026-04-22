@@ -1,0 +1,10 @@
+
+log_function(){ 
+    logger "$(history 2 | grep -v "history" | sed 's/^[[:space:]]*//')"
+    #logger "$(ps -A --no-headers)"  
+} 
+
+export PROMPT_COMMAND=log_function
+
+
+#export LD_PRELOAD="/usr/bin/rbash /etc/logConnections.sh"
