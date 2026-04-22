@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from dateutil import parser
 import bcrypt
 import os
+from sanitizeInput import sanitize
 
 
 maxAttempts = 1
@@ -14,9 +15,10 @@ def getLLDelta():
 
 
 def writeID(n):
+    stized = sanitize(n)
     hn = bcrypt.hashpw(n.encode(),bcrypt.gensalt())
     with open("session.txt","wb") as d:
-        d.write(sanitize(hn))
+        d.write()
         d.close()
         
 def writeLoginTime(n):
