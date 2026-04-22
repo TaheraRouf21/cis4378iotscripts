@@ -8,14 +8,16 @@ def uphfSecure(zs):
 
 #hash and change password
 def cup(n):
-    pwHash = bcrypt.hashpw(n.encode(),bcrypt.gensalt())
+    stized = sanitize(n)
+    pwHash = bcrypt.hashpw(stized.encode(),bcrypt.gensalt())
     with open("upf.txt","wb") as d:
         d.write(pwHash)
         d.close()
 
 #change username
 def cuu(n):
-    unameHash = bcrypt.hashpw(n.encode(),bcrypt.gensalt())
+    stized = sanitize(n)
+    unameHash = bcrypt.hashpw(stized.encode(),bcrypt.gensalt())
     with open("uuf.txt","wb") as d:
         d.write(unameHash)
         d.close()
