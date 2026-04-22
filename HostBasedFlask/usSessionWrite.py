@@ -16,7 +16,7 @@ def getLLDelta():
 def writeID(n):
     hn = bcrypt.hashpw(n.encode(),bcrypt.gensalt())
     with open("session.txt","wb") as d:
-        d.write(hn)
+        d.write(sanitize(hn))
         d.close()
         
 def writeLoginTime(n):
