@@ -18,12 +18,15 @@ Technologies Used:
 - Network monitoring tools- netstat/ ss
 - SSH/ Telnet services- for simulation
 - Basic Linux proceess monitoring tools
+- openssh for key and certificate generation
+- Env variables interpereted by dynamic linker and bash
 
 Project Architecture- The simulation consists of:
 - A virtual environment acting s the IoT device
 - Exposed services to mimic vulnerable endpoints
 - A honeypot configured to log incoming connections
 - Monitoring tools to track system and network activity
+- A flask application with authentication security techniques implemented
 
 ✨✨✨✨
 
@@ -73,6 +76,9 @@ Future Improvements!
 - Add automated alerting system
 - Use advanced honeypot frameworks
 - Expand to multiple simulated IOT Devices
+- Experiment with using busybox, or other images that are related to embedded devices, as base image to better emulate embedded linux
+- Improve container similarity to embedded device by using forks and execvp or execve
+- Write lighttpd and other functionality of embedded device in C
 
 Author:
 Tahera, Shaw, Ali, Violet
