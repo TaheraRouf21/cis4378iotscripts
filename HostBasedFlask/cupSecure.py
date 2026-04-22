@@ -1,5 +1,6 @@
 import bcrypt
 import subprocess
+from sanitizeInput import sanitize
 
 def uphfSecure(zs):
     hashed = bcrypt.hashpw(zs.encode(), bcrypt.gensalt())
